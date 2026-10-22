@@ -237,7 +237,12 @@ The topology optimisation code used to generate the VTU input files:
 
 Developed at the **Shaping Matter Lab, TU Delft**.
 
-- Muhammad Amani — m.amani@tudelft.nl
+- **Muhammad Amani** — m.amani@tudelft.nl
+
+### Acknowledgements
+
+- The **MATLAB implementation** (`matlab/`) was developed entirely by Muhammad Amani.
+- The **Python implementation** (`python/`) was developed by Muhammad Amani with the assistance of [Claude](https://claude.ai) (Anthropic), which helped port the MATLAB code to Python and build the cross-platform GUI.
 
 ---
 
