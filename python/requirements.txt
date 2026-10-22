@@ -1,0 +1,7 @@
+numpy>=1.24
+scipy>=1.11
+matplotlib>=3.7
+scikit-image>=0.21
+shapely>=2.0
+rdp>=0.8
+Pillow>=10.0
