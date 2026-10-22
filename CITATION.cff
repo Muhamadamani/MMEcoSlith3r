@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "MM Eco Slith3r: Multimaterial Toolpath Generator for Eco-Efficient Composite 3D Printing"
+message: "If you use this software, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: Amani
+    given-names: Muhammad
+    affiliation: "Shaping Matter Lab, Delft University of Technology"
+    email: m.amani@tudelft.nl
+    orcid: ""
+repository-code: "https://github.com/Muhamadamani/MMEcoSlith3r"
+url: "https://github.com/Muhamadamani/MMEcoSlith3r"
+abstract: >
+  MM Eco Slith3r is a multimaterial toolpath generator for eco-efficient
+  composite 3D printing. It converts topology optimisation results (VTU files
+  from MMEcoTopOpt) into G-code for dual-material FDM printers, generating
+  continuous, orientation-aligned toolpaths for two materials. Includes both
+  a MATLAB implementation and a Python port with a cross-platform GUI.
+keywords:
+  - multimaterial 3D printing
+  - topology optimisation
+  - toolpath generation
+  - composite manufacturing
+  - eco-efficient
+  - FDM
+  - G-code
+license: MIT
+date-released: "2025-01-01"
+references:
+  - type: software
+    title: "MMEcoTopOpt: Multimaterial Eco-Efficient Topology Optimisation"
+    authors:
+      - family-names: Asai
+        given-names: G.J.
+    repository-code: "https://github.com/gj-asai/MMEcoTopOpt"

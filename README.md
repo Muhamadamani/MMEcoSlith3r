@@ -202,18 +202,31 @@ For multimaterial parts, steps 1–5 are run independently for each material mas
 
 ## Citation
 
-If you use this code in your research, please cite the associated paper:
+If you use this software in your research, please cite it as:
+
+```bibtex
+@software{Amani2025MMEcoSlith3r,
+  author    = {Amani, Muhammad},
+  title     = {{MM Eco Slith3r}: Multimaterial Toolpath Generator for Eco-Efficient Composite {3D} Printing},
+  year      = {2025},
+  publisher = {GitHub},
+  url       = {https://github.com/Muhamadamani/MMEcoSlith3r},
+  note      = {Shaping Matter Lab, Delft University of Technology}
+}
+```
+
+If you also use the associated paper, please cite (citation will be updated upon publication):
 
 ```
-[Citation will be added upon publication]
+[Paper citation will be added upon publication]
 ```
 
 The topology optimisation code used to generate the VTU input files:
 
-```
+```bibtex
 @software{MMEcoTopOpt,
   author  = {Asai, G.J. and others},
-  title   = {MMEcoTopOpt: Multimaterial Eco-Efficient Topology Optimisation},
+  title   = {{MMEcoTopOpt}: Multimaterial Eco-Efficient Topology Optimisation},
   url     = {https://github.com/gj-asai/MMEcoTopOpt}
 }
 ```
