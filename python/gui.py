@@ -485,7 +485,7 @@ class SlitherGUI(tk.Tk):
 
         def _load():
             try:
-                from slith3r_python.vtu_pipeline import parse_vtu
+                from vtu_pipeline import parse_vtu
                 self._log_queue.put(f'Parsing {Path(path).name} …\n')
                 data = parse_vtu(path)
                 self.after(0, lambda: self._on_preview_loaded(data))
@@ -705,7 +705,7 @@ class SlitherGUI(tk.Tk):
         def _run():
             try:
                 if mode == 'single':
-                    from slith3r_python.vtu_pipeline import run_single_material_from_vtu
+                    from vtu_pipeline import run_single_material_from_vtu
                     run_single_material_from_vtu(
                         vtu_path=vtu_path,
                         out_path=out_path,
@@ -718,7 +718,7 @@ class SlitherGUI(tk.Tk):
                         line_callback=line_cb,
                     )
                 else:
-                    from slith3r_python.vtu_pipeline import run_from_vtu
+                    from vtu_pipeline import run_from_vtu
                     run_from_vtu(
                         vtu_path=vtu_path,
                         out_path=out_path,
