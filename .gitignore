@@ -14,7 +14,6 @@ venv/
 
 # Output files
 *.gcode
-*.vtu
 output/
 
 # macOS
