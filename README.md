@@ -28,7 +28,7 @@ This repository contains:
 | `matlab/` | Original MATLAB implementation used for the paper |
 | `python/` | Python port with a cross-platform GUI |
 | `data/vtu_files/` | Example VTU input files (MBB beam, L-beam, bridge cases) |
-| `data/gcodes/` | Paper G-code outputs — download from [Releases v1.0](https://github.com/Muhamadamani/MMEcoSlith3r/releases/tag/v1.0) (files are >100 MB) |
+| `data/gcodes/` | Paper G-code outputs (Design 1–5) — download from [Releases v1.0](https://github.com/Muhamadamani/MMEcoSlith3r/releases/tag/v1.0) (files are >100 MB) |
 
 ---
 
