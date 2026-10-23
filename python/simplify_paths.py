@@ -5,7 +5,7 @@ Port of SimplifyPaths.m.  Also filters out short courses.
 
 import numpy as np
 
-from .dpsimplify import dpsimplify
+from dpsimplify import dpsimplify
 
 
 def _even_linear(p: np.ndarray, max_dist: float) -> np.ndarray:

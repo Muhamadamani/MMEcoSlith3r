@@ -75,7 +75,7 @@ def parse_vtu(path: str) -> dict:
     has_two_materials  : bool
     x_range, y_range   : (min, max) physical extents
     """
-    from .generate_masks import _parse_vtu_binary
+    from generate_masks import _parse_vtu_binary
 
     data      = _parse_vtu_binary(path)
     centroids = _compute_centroids(data)
@@ -173,15 +173,15 @@ def run_from_vtu(
     ``n_layers = round(thickness_mm / layer_height)``.
     """
     from pathlib import Path as _Path
-    from .slith3r_main import (DEFAULT_PRT_OPT, _save_fig, _add_courses_lc,
+    from slith3r_main import (DEFAULT_PRT_OPT, _save_fig, _add_courses_lc,
                                _visualize_courses, _visualize_combined_courses)
-    from .generate_masks import _rasterize_with_dilation
-    from .even_streamlines import even_streamlines
-    from .cut_shape import cut_shape
-    from .simplify_paths import simplify_paths
-    from .reorder_paths import reorder_paths
-    from .move_print import move_print
-    from .gcode_format import merge_material_gcodes
+    from generate_masks import _rasterize_with_dilation
+    from even_streamlines import even_streamlines
+    from cut_shape import cut_shape
+    from simplify_paths import simplify_paths
+    from reorder_paths import reorder_paths
+    from move_print import move_print
+    from gcode_format import merge_material_gcodes
 
     opt        = {**DEFAULT_PRT_OPT, **(prt_opt or {}), 'gcode_fname': out_path}
     frame_bool = bool(opt.get('frameBool', 0))
@@ -334,12 +334,12 @@ def run_single_material_from_vtu(
       and ``thetaPhys`` as the angle field.
     """
     from pathlib import Path as _Path
-    from .slith3r_main import DEFAULT_PRT_OPT, _save_fig, _add_courses_lc, _visualize_courses
-    from .even_streamlines import even_streamlines
-    from .simplify_paths import simplify_paths
-    from .reorder_paths import reorder_paths
-    from .move_print import move_print
-    from .gcode_format import gcode_format
+    from slith3r_main import DEFAULT_PRT_OPT, _save_fig, _add_courses_lc, _visualize_courses
+    from even_streamlines import even_streamlines
+    from simplify_paths import simplify_paths
+    from reorder_paths import reorder_paths
+    from move_print import move_print
+    from gcode_format import gcode_format
 
     opt        = {**DEFAULT_PRT_OPT, **(prt_opt or {}), 'gcode_fname': out_path}
     frame_bool = bool(opt.get('frameBool', 0))

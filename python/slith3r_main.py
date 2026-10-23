@@ -34,13 +34,13 @@ from pathlib import Path
 
 import numpy as np
 
-from .load_mat import load_angles_mat
-from .even_streamlines import even_streamlines
-from .cut_shape import cut_shape
-from .simplify_paths import simplify_paths
-from .reorder_paths import reorder_paths
-from .move_print import move_print
-from .gcode_format import gcode_format, merge_material_gcodes
+from load_mat import load_angles_mat
+from even_streamlines import even_streamlines
+from cut_shape import cut_shape
+from simplify_paths import simplify_paths
+from reorder_paths import reorder_paths
+from move_print import move_print
+from gcode_format import gcode_format, merge_material_gcodes
 
 
 def load_angles(path: str) -> list[dict]:
@@ -293,7 +293,7 @@ def run_pipeline(
 
     if multimaterial and mesh_path and not (bamboo_mask_path and carbon_mask_path):
         print("Generating material masks from mesh …")
-        from .generate_masks import masks_from_mat
+        from generate_masks import masks_from_mat
         ang0 = ANGLES[0]
         x_range = (float(ang0['X'].min()), float(ang0['X'].max()))
         y_range = (float(ang0['Y'].min()), float(ang0['Y'].max()))

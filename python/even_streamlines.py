@@ -14,9 +14,9 @@ import time
 import numpy as np
 from scipy.spatial import Delaunay, KDTree
 
-from .init_frame import init_frame
-from .mmstream2 import mmstream2
-from .trim_streamline import trim_streamline
+from init_frame import init_frame
+from mmstream2 import mmstream2
+from trim_streamline import trim_streamline
 
 
 def even_streamlines(
