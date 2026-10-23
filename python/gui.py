@@ -1,4 +1,4 @@
-"""MM Slith3r — tkinter GUI front-end  |  Shaping Matter Lab
+"""MM Eco Slith3r — tkinter GUI front-end  |  Shaping Matter Lab
 
 Workflow:
   1. Browse a VTU file  → Preview shows all materials inside it.
@@ -104,7 +104,7 @@ class _SectionLabel(tk.Label):
 class SlitherGUI(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
-        self.title("MM Slith3r")
+        self.title("MM Eco Slith3r")
         self.configure(bg=_BG)
         self.resizable(True, True)
         self.minsize(1080, 740)
@@ -160,7 +160,7 @@ class SlitherGUI(tk.Tk):
         except Exception:
             pass
 
-        tk.Label(title_bar, text='MM Slith3r', font=_FONT_HEAD,
+        tk.Label(title_bar, text='MM Eco Slith3r', font=_FONT_HEAD,
                  bg=_CARD_BG, fg=_LABEL_PRI).pack(side='left', padx=(0, 10), pady=10)
         tk.Label(title_bar, text='Multimaterial Toolpath Generator',
                  font=_FONT_SMALL, bg=_CARD_BG, fg=_LABEL_SEC).pack(side='left', pady=10)
