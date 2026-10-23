@@ -21,12 +21,14 @@ MMEcoTopOpt  →  VTU file  →  MM Eco Slith3r  →  G-code
 2. **Toolpath generation** — Load the `.vtu` file into MM Eco Slith3r. The code integrates streamlines along the orientation field, cuts them into printable courses, and writes G-code.
 3. **Print** — Send the G-code to a dual-material FDM printer.
 
-This repository contains two implementations:
+This repository contains:
 
-| Folder | Language | Description |
-|--------|----------|-------------|
-| `matlab/` | MATLAB | Original implementation used for the paper |
-| `python/` | Python 3 | Python port with a cross-platform GUI |
+| Folder | Description |
+|--------|-------------|
+| `matlab/` | Original MATLAB implementation used for the paper |
+| `python/` | Python port with a cross-platform GUI |
+| `data/vtu_files/` | Example VTU input files (MBB beam, L-beam, bridge cases) |
+| `data/gcodes/` | Paper G-code outputs — available in the [Releases](https://github.com/Muhamadamani/MMEcoSlith3r/releases) (files exceed GitHub's 100 MB limit) |
 
 ---
 
