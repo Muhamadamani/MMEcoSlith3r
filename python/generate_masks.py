@@ -143,8 +143,36 @@ def masks_from_mat(
 
 # ─── .vtu reader ────────────────────────────────────────────────────────────
 
+def _parse_vtu_pyvista(path: str) -> dict:
+    """Parse any VTU file using pyvista — handles all VTK formats."""
+    import pyvista as pv
+    mesh = pv.read(path)
+    points = np.array(mesh.points[:, :2])   # drop Z
+
+    # Build connectivity + offsets from pyvista's flat cells array
+    raw_cells = mesh.cells   # [n0, id0, id1, …, n1, id0, …]
+    connectivity, offsets = [], []
+    i = 0
+    while i < len(raw_cells):
+        n = raw_cells[i]
+        connectivity.extend(raw_cells[i + 1: i + n + 1])
+        offsets.append(len(connectivity))
+        i += n + 1
+
+    result = {
+        'points':       points,
+        'connectivity': np.array(connectivity, dtype=np.int64),
+        'offsets':      np.array(offsets,      dtype=np.int64),
+    }
+    for name in mesh.cell_data.keys():
+        result[name] = np.array(mesh.cell_data[name])
+    return result
+
+
 def _parse_vtu_binary(path: str) -> dict:
     """Parse a binary-appended, zlib-compressed VTU file.
+
+    Falls back to pyvista for inline-binary or other VTK formats.
 
     Returns dict with numpy arrays: 'points', 'connectivity', 'offsets',
     'types', and any CellData arrays by name.
@@ -154,7 +182,7 @@ def _parse_vtu_binary(path: str) -> dict:
     # Split XML header from binary payload
     sep = raw.find(b'<AppendedData encoding="raw">')
     if sep < 0:
-        raise ValueError("Cannot find AppendedData section in VTU file")
+        return _parse_vtu_pyvista(path)
     # Binary payload starts after the underscore marker
     payload_start = raw.index(b'_', sep) + 1
     payload = raw[payload_start:]
